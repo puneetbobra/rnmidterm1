@@ -8,26 +8,13 @@ const NumCompare = () => {
     
     function compare(){
         let result;
-        if ((num1 <= 2 || num1 >= 100) || (num2 <= 2 || num2 >= 100))
-        { result = 
-            <Text style= {{color: 'red'}}>
-                Invalid input, please try again.
-            </Text>}
-        else if (num1 > num2) {
-            result = <Text style={{color: 'green'}}>
-            Number1 is bigger than Number2
-            </Text>}
-        else if (num1 < num2) {
-        result = <Text style={{color: 'green'}}>
-        Number1 is less than Number2
-        </Text>
-        }
-        else {
-            result = <Text style={{color: 'green'}}>
-                Number1 is equal to Number2
-          </Text>
-            }
-            return result        
+        if ((num1 < 2 || num1 > 100) || (num2 < 2 || num2 > 100))
+        { result = <Text style= {{color: 'red'}}> Invalid input, please try again. </Text>}
+        else if (num1 > num2) { result = <Text style={{color: 'green'}}> Number1 is bigger than Number2 </Text>}
+        else if (num1 < num2) { result = <Text style={{color: 'green'}}> Number1 is less than Number2 </Text> }
+        else {result = <Text style={{color: 'green'}}> Number1 is equal to Number2 </Text> }
+        
+        return result        
     }
               
 return (
