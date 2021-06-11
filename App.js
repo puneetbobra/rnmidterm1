@@ -9,6 +9,7 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.box}>
         <Text style= {styles.boxTextHeader}> Midterm Exam </Text>
+        
         <Text style= {styles.boxText}> Compare two numbers </Text>
       </View>
 

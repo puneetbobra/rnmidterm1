@@ -16,12 +16,12 @@ export default StyleSheet.create({
         },
     boxTextHeader: {
         color: 'white',        
-        fontSize: '48',
+        fontSize: 24,
         fontWeight: 'bold'
     },
     boxText:{
         color: 'white',        
-        fontSize: '22',
+        fontSize: 14,
     }
 
   });

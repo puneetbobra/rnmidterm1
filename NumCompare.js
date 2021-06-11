@@ -4,22 +4,32 @@ import { Text, View, TextInput, Button } from 'react-native'
 const NumCompare = () => {
     const [num1, setNum1] = useState()
     const [num2, setNum2] = useState()
-    const [result, setResult] = useState()
-    const [maxnum] = useState(100)    
-    const [minnum] = useState(2)
-    const [invalidnum, setInvalidNum] = useState('')
-    function validate() {
-        if (num1 >= maxnum) {return setInvalidNum('Invalid')}
-        if (num1 <= minnum) {return setInvalidNum('Invalid')}
-        if (num2 >= maxnum) {return setInvalidNum('Invalid')}
-        if (num2 <= minnum) {return setInvalidNum('Invalid')}        
+    const [response, setResponse] = useState('')
+    
+    function compare(){
+        let result;
+        if ((num1 <= 2 || num1 >= 100) || (num2 <= 2 || num2 >= 100))
+        { result = 
+            <Text style= {{color: 'red'}}>
+                Invalid input, please try again.
+            </Text>}
+        else if (num1 > num2) {
+            result = <Text style={{color: 'green'}}>
+            Number1 is bigger than Number2
+            </Text>}
+        else if (num1 < num2) {
+        result = <Text style={{color: 'green'}}>
+        Number1 is less than Number2
+        </Text>
+        }
+        else {
+            result = <Text style={{color: 'green'}}>
+                Number1 is equal to Number2
+          </Text>
             }
-    function compare(num1, num2){
-        if (num1 > num2) {return setResult('greater')}
-        else if (num1 < num2) {return setResult ('smaller')}
-        else {return setResult('equal')}
+            return result        
     }
-            
+              
 return (
     <View style = {{padding: 10}}>
     
@@ -31,18 +41,18 @@ return (
 
     <Text>Number 2</Text>
     <TextInput 
-        style = {{height: 50, width: 200, borderColor: 'gray', border:'solid' }}
+        style = {{height: 50, width: 200, borderColor: 'gray', border:'solid'}}
         onChangeText = {num2 => setNum2(num2)}
-        keyboardType = 'numeric'
-          
-         />
+        keyboardType = 'numeric' />
     
-    <Button style = {{padding: 20, backgroundColor: 'white'}}
+    <Button 
+        style = {{height : 20, backgroundColor: 'white'}}
         title = 'COMPARE'
-        onPress = {validate, compare}
+        onPress = {() =>{setResponse(compare())}}
         />
-    <Text>{invalidnum}</Text>
-    <Text>{result}</Text>
+
+    <Text>{response}</Text>
+
     </View>
 )
 }
