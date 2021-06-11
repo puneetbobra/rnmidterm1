@@ -12,8 +12,7 @@ export default StyleSheet.create({
         width: 200,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'turquoise',
-        
+        backgroundColor: 'turquoise',        
         },
     boxTextHeader: {
         color: 'white',        
